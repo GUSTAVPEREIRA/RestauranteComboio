@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="109.0" styleClass="root" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estagio.controller.SideMenuCadastroController">
+   <children>
+      <JFXButton fx:id="Categoria" buttonType="RAISED" onAction="#OnActionCategoria" prefHeight="34.0" prefWidth="109.0" ripplerFill="#002bff" styleClass="jfx-Button" text="Categoria" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="Cliente" buttonType="RAISED" onAction="#OnActionCliente" prefHeight="34.0" prefWidth="109.0" ripplerFill="#002bff" styleClass="jfx-Button" text="Cliente" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="Cidade" buttonType="RAISED" onAction="#OnActionCidade" prefHeight="34.0" prefWidth="109.0" ripplerFill="#002bff" styleClass="jfx-Button" text="Cidade" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="Estado" buttonType="RAISED" onAction="#OnActionEstado" prefHeight="34.0" prefWidth="109.0" ripplerFill="#002bff" styleClass="jfx-Button" text="Estado" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="Empresa" buttonType="RAISED" onAction="#OnActionEmpresa" prefHeight="34.0" prefWidth="109.0" ripplerFill="#002bff" styleClass="jfx-Button" text="Empresa" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="Produto" buttonType="RAISED" onAction="#OnActionProduto" prefHeight="34.0" prefWidth="109.0" ripplerFill="#002bff" styleClass="jfx-Button" text="Produto" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="Usuario" buttonType="RAISED" onAction="#OnActionUsuario" prefHeight="34.0" prefWidth="109.0" ripplerFill="#002bff" styleClass="jfx-Button" text="Usuário" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+   <stylesheets>
+      <URL value="@css/BackGroundCSS.css" />
+      <URL value="@css/Botões.css" />
+   </stylesheets>
+</VBox>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" onMouseClicked="#OnMouseAbreMenu" prefHeight="455.0" prefWidth="804.0" styleClass="background" stylesheets="@css/Botões.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estagio.controller.MainController">
+   <children>
+      <JFXHamburger fx:id="ham_menu" alignment="TOP_RIGHT" layoutX="14.0" layoutY="11.0" onMouseClicked="#OnMouseAbreMenu" styleClass="background" />
+      <JFXDrawer fx:id="drw_menu" defaultDrawerSize="673.0" layoutX="50.0" prefHeight="36.0" prefWidth="673.0" styleClass="root" />
+   </children>
+</AnchorPane>

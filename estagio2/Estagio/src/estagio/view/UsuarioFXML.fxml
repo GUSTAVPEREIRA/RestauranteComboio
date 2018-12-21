@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="583.0" prefWidth="770.0" style="-fx-background-color: #6a6aca;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estagio.controller.UsuarioController">
+   <children>
+      <JFXTextField fx:id="txt_codigo" disable="true" focusColor="#5fcda3" layoutX="180.0" layoutY="115.0" maxWidth="231.0" minWidth="131.0" prefHeight="34.0" prefWidth="109.0" unFocusColor="#d7c6c6">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="87.0" layoutY="122.0" text="Código">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_Buscar" layoutX="334.0" layoutY="117.0" onAction="#OnActionBuscar" prefHeight="31.0" prefWidth="85.0" ripplerFill="#002bff" style="-fx-background-color: #5196F3;" text="Buscar" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="87.0" layoutY="169.0" text="Nome">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txt_nome" focusColor="#5fcda3" layoutX="180.0" layoutY="162.0" maxWidth="397.0" minWidth="131.0" prefHeight="36.0" prefWidth="397.0" unFocusColor="#d7c6c6">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="87.0" layoutY="205.0" text="Login">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txt_login" focusColor="#5fcda3" layoutX="180.0" layoutY="198.0" maxWidth="397.0" minWidth="131.0" prefHeight="36.0" prefWidth="397.0" unFocusColor="#d7c6c6">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="87.0" layoutY="241.0" text="Senha">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXPasswordField fx:id="txt_senha" focusColor="#5fcda3" layoutX="180.0" layoutY="246.0" maxWidth="397.0" minWidth="397.0" prefHeight="31.0" prefWidth="397.0" unFocusColor="#d7c6c6" />
+      <Label layoutX="87.0" layoutY="277.0" text="Ativo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cbb_ativo" layoutX="180.0" layoutY="275.0" prefHeight="25.0" prefWidth="276.0" visibleRowCount="20" />
+      <Label layoutX="87.0" layoutY="308.0" text="Tipo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cbb_tipo" layoutX="180.0" layoutY="310.0" prefHeight="25.0" prefWidth="276.0" visibleRowCount="20" />
+      <JFXButton fx:id="btn_Novo" layoutX="50.0" layoutY="540.0" onAction="#OnActionNovo" prefHeight="31.0" prefWidth="85.0" ripplerFill="#002bff" style="-fx-background-color: #5196F3;" text="Novo" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_Gravar" layoutX="150.0" layoutY="540.0" onAction="#OnActionGravar" prefHeight="31.0" prefWidth="85.0" ripplerFill="#002bff" style="-fx-background-color: #5196F3;" text="Gravar" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_Excluir" disable="true" layoutX="250.0" layoutY="540.0" onAction="#OnActionExcluir" prefHeight="31.0" prefWidth="85.0" ripplerFill="#002bff" style="-fx-background-color: #5196F3;" text="Excluir" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_Cancelar" disable="true" layoutX="350.0" layoutY="540.0" onAction="#OnActionCancelar" prefHeight="31.0" prefWidth="85.0" ripplerFill="#002bff" style="-fx-background-color: #5196F3;" text="Cancelar" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_Sair" layoutX="450.0" layoutY="540.0" onAction="#OnActionSair" prefHeight="31.0" prefWidth="85.0" ripplerFill="#002bff" style="-fx-background-color: #5196F3;" text="Sair" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

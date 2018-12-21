@@ -1,0 +1,44 @@
+.tab{
+        -fx-background-color: #4267b1;
+        
+    }
+.tab .label{
+        -fx-background-color:#4267b1;
+        -fx-text-fill: white;
+    }
+ 
+    .root{
+        -fx-background-color:#4267b1;
+    }    
+ 
+ .tab-header-background .label{
+        -fx-background-color: #E9EAEE;
+    }
+
+    
+    .radio-button{
+        -fx-text-fill:  black;
+        -fx-background-color:  white;
+    }
+    
+    .text-field{
+        -fx-text-fill:black;
+    }
+   
+    .combo-box{
+        -fx-text-fill:black;
+        -fx-background-color: #0591A5;
+    }
+    
+    .jfx-button{
+        -fx-text-fill: white;
+        -fx-background-color: #4267b1;
+        -jfx-button-type: RAISED;
+    }
+    
+    .jfx-hamburger StackPane { -fx-background-color: white; }
+
+    .VBox{
+        -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    }
+    

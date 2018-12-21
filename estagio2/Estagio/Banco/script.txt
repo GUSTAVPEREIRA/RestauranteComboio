@@ -1,0 +1,141 @@
+CREATE TABLE public.usuario
+(
+    usu_nome character varying(100) NOT NULL,
+    usu_login character varying(20) NOT NULL,
+    usu_senha character varying(20) NOT NULL,
+    usu_tipo character varying(10) NOT NULL,
+    usu_ativo boolean NOT NULL,
+    usu_id serial NOT NULL,
+    PRIMARY KEY (usu_id)
+)
+WITH (
+    OIDS = FALSE
+);
+
+CREATE TABLE public.fornecedor
+(
+    for_id serial NOT NULL,
+    for_cnpj character varying(20) NOT NULL,
+    for_ie character varying(20) NOT NULL,
+    for_telefone character varying(20),
+    for_celular character varying(20),
+    for_cep character varying(12) NOT NULL,
+    PRIMARY KEY (for_id)
+)
+WITH (
+    OIDS = FALSE
+);
+
+CREATE TABLE public.estado
+(
+    est_id serial NOT NULL,
+    est_uf character varying(5) NOT NULL,
+    est_nome character varying(40) NOT NULL,
+    PRIMARY KEY (est_id)
+)
+WITH (
+    OIDS = FALSE
+);
+
+CREATE TABLE public.cidade
+(
+    cid_id serial NOT NULL,
+    cid_nome character varying(80) NOT NULL,
+    est_id serial NOT NULL,
+    PRIMARY KEY (cid_id),
+    FOREIGN KEY (est_id)
+        REFERENCES public.estado (est_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+);
+
+CREATE TABLE public.clientepj
+(
+    clij_nome character varying(60) NOT NULL,
+    clij_cep character varying(12) NOT NULL,
+    clij_telefone character varying(20) NOT NULL,
+    clij_celular character varying(20) NOT NULL,
+    clij_id serial NOT NULL,
+    clij_cnpj character varying(20) NOT NULL,
+    clij_ie character varying(20) NOT NULL,
+    PRIMARY KEY (clij_id),
+    FOREIGN KEY (cid_id)
+        REFERENCES public.cidade (cid_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+);
+
+CREATE TABLE public.clientepf
+(
+    clipf_id serial NOT NULL,
+    cllipf_nome character varying(80) NOT NULL,
+    cllipf_estado_civil character varying(20) NOT NULL,
+    cllipf_rg character varying(20) NOT NULL,
+    cllipf_cpf character varying(20) NOT NULL,
+    cllipf_telefone character varying(20),
+    cllipf_celular character varying(20),
+    cllipf_cep character varying(12) NOT NULL,
+    cid_cidade integer NOT NULL,
+    PRIMARY KEY (clipf_id),
+    FOREIGN KEY (cid_id)
+        REFERENCES public.cidade (cid_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+);
+
+CREATE TABLE public.categoria
+(
+    cat_id serial NOT NULL,
+    cat_nome character varying(60) NOT NULL,
+    PRIMARY KEY (cat_id)
+)
+WITH (
+    OIDS = FALSE
+);
+
+CREATE TABLE public.produto
+(
+    prod_id serial NOT NULL,
+    prod_nome character varying(60) NOT NULL,
+    prod_valor double precision NOT NULL,
+    prod_estoque integer NOT NULL,
+    prod_valor_compra double precision NOT NULL,
+    for_id integer NOT NULL,
+    PRIMARY KEY (prod_id),
+    FOREIGN KEY (for_id)
+        REFERENCES public.fornecedor (for_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+);
+ALTER TABLE public.usuario
+    OWNER to postgres;
+
+CREATE TABLE public.empresa
+(
+    emp_id serial NOT NULL,
+    emp_nome character varying(100) NOT NULL,
+    emp_endereco character varying(100) NOT NULL,
+    emp_cnpj character varying(20) NOT NULL,
+    emp_cep character varying(20) NOT NULL,
+    emp_bairro character varying(100) NOT NULL,
+    emp_imagem character varying,
+    PRIMARY KEY (emp_id)
+)
+WITH (
+    OIDS = FALSE
+);
+
+ALTER TABLE public.empresa
+    OWNER to postgres;

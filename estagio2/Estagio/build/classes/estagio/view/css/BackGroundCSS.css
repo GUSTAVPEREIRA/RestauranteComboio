@@ -1,0 +1,19 @@
+.background{
+    -fx-background-color: white;
+}
+.jfx-Button{
+        -fx-text-fill: white;
+        -fx-background-color:black;
+        -jfx-button-type: RAISED;
+    }
+    
+.tab{
+        -fx-background-color: white;
+        -fx-text-fill: black;
+        
+    }
+.tab .label{
+        -fx-background-color: #4267b1;
+        -fx-text-fill: white;
+
+    }
