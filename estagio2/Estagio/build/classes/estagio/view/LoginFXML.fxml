@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="456.0" prefWidth="734.0" styleClass="background" stylesheets="@css/BackGroundCSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estagio.controller.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="456.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estagio.controller.LoginController">
    <children>
       <JFXTextField fx:id="txt_login" focusColor="#5fcda3" labelFloat="true" layoutX="233.0" layoutY="173.0" maxWidth="295.0" minWidth="295.0" prefHeight="34.0" prefWidth="295.0" promptText="Login" unFocusColor="BLACK">
          <font>
@@ -30,7 +30,7 @@
             <Font size="14.0" />
          </font>
       </JFXPasswordField>
-      <JFXButton fx:id="btn_login" buttonType="RAISED" layoutX="443.0" layoutY="286.0" onAction="#ActionLogin" prefHeight="31.0" prefWidth="85.0" ripplerFill="#002bff" styleClass="jfx-Button" stylesheets="@css/Botões.css" text="LOGIN" textFill="WHITE">
+      <JFXButton fx:id="btn_login" buttonType="RAISED" layoutX="443.0" layoutY="286.0" onAction="#ActionLogin" prefHeight="31.0" prefWidth="85.0" ripplerFill="#002fff" styleClass="jfx-Button" stylesheets="@css/Botões.css" text="LOGIN">
          <font>
             <Font size="14.0" />
          </font>

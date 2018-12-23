@@ -6,6 +6,7 @@
 package estagio.dao;
 
 import estagio.model.Estado;
+import estagio.view.util.JPAUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.GeneratedValue;
@@ -32,7 +32,6 @@ import javax.transaction.Transactional;
 public class EstadoDAO {
     
     @PersistenceContext
-    EntityManagerFactory  emf; 
     EntityManager em;
    
     public static  Connection con;
@@ -40,8 +39,7 @@ public class EstadoDAO {
     
     public EstadoDAO() 
     {
-        emf = Persistence.createEntityManagerFactory("estagio");
-        em = emf.createEntityManager();
+        em = new JPAUtil().getEntityManager();
     }
 
     
@@ -62,10 +60,9 @@ public class EstadoDAO {
     @Transactional
     public void inserir(Estado estado) 
     {
-
             if(!em.isOpen())
             {
-                em = emf.createEntityManager();
+                em = new JPAUtil().getEntityManager();
             }
             else
                 em.getTransaction().begin();
@@ -85,40 +82,63 @@ public class EstadoDAO {
             {
                 em.close();
             }
-            
-
     }
     
-    public boolean alterar(Estado estado) 
+    public void alterar(Estado estado) 
     {
-        abreConnection();
-        String sql = "UPDATE estado SET est_nome=?, est_uf=? WHERE est_id=?";
-        try 
-        {
-            PreparedStatement stmt = con.prepareStatement(sql);
-            stmt.setString(1, estado.getNome());
-            stmt.setString(2, estado.getUf());
-            stmt.setLong(3, estado.getId());
-            stmt.execute();
-            return true;
-        } catch (SQLException ex) {
-            Logger.getLogger(EstadoDAO.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
+            if(!em.isOpen())
+            {
+                em = new JPAUtil().getEntityManager();
+            }
+            else
+                em.getTransaction().begin();
+            try
+            {
+                
+                Estado aux = em.find(Estado.class,estado.getId());
+                aux.setNome(estado.getNome());
+                aux.setUf(estado.getUf());
+                em.merge(aux);
+                em.getTransaction().commit();
+               
+            } 
+            catch(Exception e)
+            {
+                em.getTransaction().rollback();
+                System.out.println(e.getMessage());
+            }
+            finally
+            {
+                em.close();
+            }
     }
 
     public boolean Deletar(Estado estado) {
-        abreConnection();
-        String sql = "DELETE FROM estado WHERE est_id=?";
-        try {
-            
-            PreparedStatement stmt = con.prepareStatement(sql);
-            stmt.setLong(1, estado.getId());
-            stmt.execute();
-            return true;
-        } catch (SQLException ex) {
-            return false;
-        }
+        boolean deletado = false;
+            if(!em.isOpen())
+            {
+                em = new JPAUtil().getEntityManager();
+            }
+            else
+                em.getTransaction().begin();
+            try
+            {
+                
+                Estado aux = em.find(Estado.class,estado.getId());
+                em.remove(aux);
+                em.getTransaction().commit();
+                deletado = true;
+            } 
+            catch(Exception e)
+            {
+                em.getTransaction().rollback();
+                System.out.println(e.getMessage());
+            }
+            finally
+            {
+                em.close();
+                return deletado;
+            }
     }
     public Estado busca(String busca) {
         abreConnection();

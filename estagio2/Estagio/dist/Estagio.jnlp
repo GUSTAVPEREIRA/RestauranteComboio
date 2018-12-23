@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Estagio.jar" size="71497" download="eager" />
+    <jar href="Estagio.jar" size="71252" download="eager" />
     <jar href="lib\FastInfoset-1.2.15.jar" size="311876" download="eager" />
     <jar href="lib\antlr-2.7.7.jar" size="445288" download="eager" />
     <jar href="lib\byte-buddy-1.9.5.jar" size="3240307" download="eager" />

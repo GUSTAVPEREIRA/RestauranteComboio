@@ -37,7 +37,7 @@ public class EstadoConsultaController implements Initializable {
     private JFXButton btn_filtro;
     private EstadoController estadoController;
     @FXML
-    private TableColumn<Estado, String> tc_codigo;
+    private TableColumn<Estado, Long> tc_codigo;
     @FXML
     private TableColumn<Estado, String> tc_nome;
     @FXML
@@ -65,6 +65,7 @@ public class EstadoConsultaController implements Initializable {
 
     @FXML
     private void OnMouseClickedEstado(MouseEvent event) {
+        
        if (tb_estado.getSelectionModel().getSelectedItem() != null) 
        {
            this.setEstado(tb_estado.getSelectionModel().getSelectedItem());
@@ -76,13 +77,15 @@ public class EstadoConsultaController implements Initializable {
        }        
     }
     
+    
+    
     public void carregaTela(String palavra)
     {
         listEstado.clear();
         tb_estado.getItems().clear();
-        tc_codigo.setCellValueFactory(new PropertyValueFactory<>("Est_id"));
-        tc_nome.setCellValueFactory(new PropertyValueFactory<>("Est_nome"));
-        tc_sigla.setCellValueFactory(new PropertyValueFactory<>("Est_sigla"));
+        tc_codigo.setCellValueFactory(new PropertyValueFactory<>("Id"));
+        tc_nome.setCellValueFactory(new PropertyValueFactory<>("Nome"));
+        tc_sigla.setCellValueFactory(new PropertyValueFactory<>("Uf"));
         listEstado = estadoDAO.listar(palavra);
         if (!listEstado.isEmpty()) 
         {

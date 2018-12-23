@@ -112,7 +112,12 @@ public class EstadoController implements Initializable {
           {
             this.setEstado(estado);                
           }          
-          
+          else
+          {
+              estado = null;
+              this.setEstado(null);
+              
+          }
         } 
         catch (IOException ex) 
         {
@@ -157,7 +162,8 @@ public class EstadoController implements Initializable {
             if (estado.getId()==0)
             {
                 estado.setId(null);
-                estadoDAO.inserir(estado);                
+                estadoDAO.inserir(estado);      
+
             }
             else
                 estadoDAO.alterar(estado);
@@ -173,11 +179,15 @@ public class EstadoController implements Initializable {
     }
     public void setEstado(Estado estado)
     {
-        this.estado = estado;
-        txt_nome.setText(estado.getNome());
-        txt_codigo.setText(""+estado.getId());
-        txt_sigla.setText(estado.getUf());        
-        ativaTela();
+        if (estado != null) 
+        {
+            this.estado = estado;
+            txt_nome.setText(estado.getNome());
+            txt_codigo.setText(""+estado.getId());
+            txt_sigla.setText(estado.getUf());        
+            ativaTela();
+        }
+
     }
     
     public void ativaTela()

@@ -103,7 +103,6 @@ public class CategoriaController implements Initializable {
        btn_Excluir.setDisable(false);
        btn_Cancelar.setDisable(false);
     }
-    @FXML
     private void OnActionGravar(ActionEvent event) {
         Boolean erro=false;
         String erros="";
@@ -151,7 +150,6 @@ public class CategoriaController implements Initializable {
         desativaTela();
     }
 
-    @FXML
     private void OnActionExcluir(ActionEvent event) 
     {
         
@@ -178,20 +176,17 @@ public class CategoriaController implements Initializable {
         });      
     }
 
-    @FXML
     private void OnActionCancelar(ActionEvent event) 
     {
        desativaTela();
     }
 
-    @FXML
     private void OnActionSair(ActionEvent event) 
     {
         Stage stage=(Stage)btn_Sair.getScene().getWindow();
         stage.close();
     }
 
-    @FXML
     private void OnActionNovo(ActionEvent event) 
     {
        desativaTela();
@@ -211,7 +206,6 @@ public class CategoriaController implements Initializable {
     }
         
     
-    @FXML
     private void OnActionBuscar(ActionEvent event) {
         try {
             
@@ -235,7 +229,6 @@ public class CategoriaController implements Initializable {
        
     }
 
-    @FXML
     private void Limitetxt_nome(KeyEvent event) {
         if (txt_nome.getText().length() == 60)
             event.consume();
@@ -245,7 +238,6 @@ public class CategoriaController implements Initializable {
 
 
 
-    @FXML
     private void ToUpperCase(KeyEvent event) {
         if (!txt_nome.getText().isEmpty()) {
             txt_nome.setText(txt_nome.getText().toUpperCase());
